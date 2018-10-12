@@ -53,7 +53,7 @@ while True:
     command = connection.getCommand()
     if (command == 'exit'):
         break
-    if (command != 'call' or command != 'hang' or command != 'answer'):
+    if (command != 'call' and command != 'hang' and command != 'answer'):
         print("wrong command")
         continue
     
