@@ -54,6 +54,7 @@ while True:
     if (command == 'exit'):
         break
     if (command != 'call' or command != 'hang' or command != 'answer'):
+        print("wrong command")
         continue
     
     if (command == 'call'):
