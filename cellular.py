@@ -42,7 +42,7 @@ class Cellular:
 
     def answer_call(self):
         print("Answering call...\n")
-        self.cellularSerial('ATA\r'.encode())
+        self.cellularSerial(('ATA\r').encode())
         response = self.cellularSerial.readlines(None)
         print(response)
     
