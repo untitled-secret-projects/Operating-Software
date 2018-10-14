@@ -2,7 +2,13 @@
 import serial
 import gpiozero
 from signal import pause
+from Command import Command
 #from time import sleep
+
+#Port 17 is Enter
+#Port 27 is Back
+#Port 22 is Left
+#Port 10 is Right
 
 port = "/dev/ttyACM0"
 rate = 9600
@@ -16,17 +22,17 @@ s1 = serial.Serial(port, rate)
 s1.flushInput()
 
 def pressed1():
-    print("button 17")
-    s1.write("button 17".encode())
+    print(Command.enter.value)
+    s1.write(Command.enter.value.encode())
 def pressed2():
-    print("button 27")
-    s1.write("button 27".encode())
+    print(Command.back.value)
+    s1.write(Command.back.value.encode())
 def pressed3():
-    print("button 22")
-    s1.write("button 22".encode())
+    print(Command.left.value)
+    s1.write(Command.left.value.encode())
 def pressed4():
-    print("button 10")
-    s1.write("button 10".encode())
+    print(Command.right.value)
+    s1.write(Command.right.value.encode())
 
 button1.when_pressed = pressed1
 button2.when_pressed = pressed2
